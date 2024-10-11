@@ -1,0 +1,15 @@
+<head>
+    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<div class="market">
+    <app-product *ngFor="let item of paginatedWatchDetails$ | async" [urlImage]="item.urlImage" [name]="item.name"
+        [price]="item.price" [rating]="item.rating" [numberRating]="item.numberRating" [id]="item.id"
+        [linkHref]="item.linkHref"></app-product>
+</div>
+<div class="pagination">
+    <button class="pagination-button previous" (click)="changePage(page - 1)" [disabled]="page <= 1">Previous</button>
+    
+    <span class="pagination-info">Page {{ page }} of {{ totalPages }}</span>
+
+    <button class="pagination-button next" (click)="changePage(page + 1)" [disabled]="page >= totalPages">Next</button>
+</div>

@@ -1,0 +1,7 @@
+.main {
+    overflow: hidden; /* Hides the scrollbar */
+}
+
+*::-webkit-scrollbar {
+    width: 0px;
+}

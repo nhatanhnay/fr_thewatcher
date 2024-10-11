@@ -1,0 +1,55 @@
+<head>
+    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<div class="container">
+    <div class="left-column">
+        <h2>Thông tin giao hàng</h2>
+        <div class="form-group">
+            <input type="text" id="fullname" [(ngModel)]="customer.fullName" placeholder="Họ và tên">
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" [(ngModel)]="customer.email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="text" id="phone" [(ngModel)]="customer.phone" placeholder="Số điện thoại">
+        </div>
+        <div class="form-group">
+            <select id="city" (change)="onCityChange($event)" [(ngModel)]="customer.city" class="form-select">
+                <option value="" disabled selected>Chọn tỉnh/thành</option>
+                <option *ngFor="let city of cities" [value]="city.Id">{{ city.Name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select id="district" (change)="onDistrictChange($event)" [(ngModel)]="customer.district" class="form-select"
+                [disabled]="!districts.length">
+                <option value="" disabled selected>Chọn quận/huyện</option>
+                <option *ngFor="let district of districts" [value]="district.Id">{{ district.Name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select id="ward" [(ngModel)]="customer.ward" class="form-select" [disabled]="!wards.length">
+                <option value="" disabled selected>Chọn phường/xã</option>
+                <option *ngFor="let ward of wards" [value]="ward.Id">{{ ward.Name }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" id="address" [(ngModel)]="customer.address" placeholder="Địa chỉ">
+        </div>
+
+        <h2>Phương thức thanh toán</h2>
+        <div class="payment-method">
+            <input type="radio" id="cod" name="payment" checked>
+            <label for="cod">Thanh toán khi giao hàng (COD)</label>
+        </div>
+        <div class="button-container">
+            <button class="btn" (click)="completeOrder()" >Hoàn tất đơn hàng</button>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <div class="order-summary">
+            <app-item-check-out *ngFor="let item of cartItems" [name]="item.name" [price]="item.price"
+                [urlImage]="item.urlImage"></app-item-check-out>
+        </div>
+    </div>
+</div>

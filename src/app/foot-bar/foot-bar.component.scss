@@ -1,0 +1,61 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-info {
+    display: flex;
+    /* Sử dụng flex thay vì column */
+    flex-direction: column;
+    /* Đặt chiều dọc cho phần tử con */
+    justify-content: space-between;
+    /* Giảm khoảng cách nếu cần */
+    text-align: right;
+    padding: 1rem 2rem;
+}
+
+.footer-icons {
+    display: flex;
+    /* Hiển thị icon trong dạng hàng ngang */
+    gap: 2rem;
+    /* Khoảng cách giữa các icon */
+    text-align: left;
+    /* Căn chỉnh văn bản sang bên trái */
+    padding: 1rem 2rem;
+}
+
+.footer-icons i {
+    font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for color and size */
+    cursor: pointer;
+}
+
+.footer-icons i:hover {
+    color: #1e90ff; /* Change to blue on hover (DodgerBlue) */
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+.footer-icons i:active {
+    transform: scale(0.9); /* Shrink on click to give a pressing effect */
+    color: #4682b4; /* Darker blue on click (SteelBlue) */
+    transition: transform 0.1s ease; /* Quick response for click */
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.footer-info p {
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}

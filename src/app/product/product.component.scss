@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.name-product {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.price {
+    font-size:0.8rem;
+}
+
+.product-info-name-and-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.product-info-name-and-price i {
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+
+.product-card .image {
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card .image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .image:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .image .product{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info{
+    text-align: left;
+}
+
+.product-info p {
+    margin-bottom: 0.5rem;
+}
+
+.buy-now {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.buy-now:hover {
+    background-color: #2e2d2d;
+    scale: 0.9;
+}
+
+.buy-now:active {
+    background-color: #1a1a1a;  /* Darken background when clicked */
+    transform: scale(0.95);     /* Slightly shrink the button on click */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);  /* Add a shadow to mimic depth */
+}
+
+.block-buy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ratings span {
+    color: gold;
+}
+
+.ratings p {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.product-card {
+    height: 480px;
+    width: 380px;
+    background-color: #fff;
+    padding: 1rem 1rem 0rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+}
+
+.icon-bag {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth transitions */
+}
+
+.icon-bag:hover {
+    color: #ff6347; /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.icon-bag:active {
+    transform: scale(0.95); /* Shrinks slightly when clicked */
+    color: #ff4500; /* Change color on click to indicate interaction */
+    transition: transform 0.1s ease; /* Quick transformation on click */
+}
+::-webkit-scrollbar {
+    width: 0px;
+}

@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Watchers</title>
+    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<div class="item">
+    <div class="image">
+        <img [src]="urlImage">
+        <div class="name">
+            <h3>{{ name }}</h3>
+        </div>
+    </div>
+    <p>${{ sumPrice }}</p>
+    <p>{{ quantity }}</p>
+    <i class="ti-close" (click)="removeItem(id)"></i>
+</div>

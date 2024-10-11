@@ -1,0 +1,124 @@
+.logo h1 {
+    font-size: 2.5rem;
+    color: #002080;
+}
+
+nav {
+    display: flex;
+    width: 1920px;
+    height: 30px;
+    padding: 0rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 0.5rem 0rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+    background-color: #fff;
+}
+
+.header {
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: flex;
+    /* Sử dụng flexbox */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    padding: 0;
+    /* Loại bỏ padding của li */
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; /* Default dark gray text */
+    display: block;
+    font-size: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 4rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+}
+
+nav ul li a:hover {
+    border-radius: 0.5rem;
+    background-color: #f0f0f0; /* Light gray background (Gray-White) */
+    color: #000; /* Solid black text on hover */
+}
+
+nav ul li a:active {
+    background-color: #d3d3d3; /* Slightly darker gray on click */
+    color: #000; /* Keep text black when clicked */
+    transform: scale(0.95); /* Slight shrink on click for feedback */
+    transition: background-color 0.1s ease, transform 0.1s ease; /* Quick transition on click */
+}
+
+.icons {
+    height: 25px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icons .icon-header {
+    font-size: 24px;
+    /* Thay đổi kích thước biểu tượng nếu biểu tượng là font icon */
+    display: inline-block;
+    color: #333;
+}
+
+.icon {
+    font-size: 24px;
+    /* Thay đổi kích thước biểu tượng nếu biểu tượng là font icon */
+    display: inline-block;
+    color: #fff;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.input-search {
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+}
+
+.icons i {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background-color: #fff;
+    color: red;
+    border-radius: 0.5rem;
+    border: 1px solid #333;
+    padding: 2px 6px;
+    font-size: 11px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}

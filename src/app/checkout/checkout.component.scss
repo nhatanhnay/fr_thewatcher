@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.left-column, .right-column {
+    padding: 20px;
+    flex: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    gap: 20px;
+    border: 1px solid #ddd; /* Light border */
+}
+
+.left-column {
+    border-right: 1px solid #ddd; /* Lighter border */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #555; /* Slightly lighter text */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Darker label text */
+}
+
+.form-group input, .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border */
+    background-color: #fff; /* White background */
+    color: #333; /* Darker text */
+    border-radius: 5px;
+}
+
+.form-group input::placeholder {
+    color: #999; /* Gray placeholder text */
+}
+
+.form-group input:focus, .form-select:focus {
+    outline: none;
+    border-color: #007bff; /* Blue focus border */
+}
+
+.payment-method {
+    margin-bottom: 15px;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    color: #fff; /* White text */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.button-container {
+    text-align: right; /* Aligns content to the right */
+    margin-top: 20px; /* Add space above the button */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn:active {
+    background-color: #004499; /* Even darker blue on active */
+    transform: scale(0.98); /* Slightly reduce size for effect */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
+
+.right-column {
+    background-color: #fff; /* White background for right column */
+}
+
+.order-summary {
+    padding: 20px;
+    background-color: #fff; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}

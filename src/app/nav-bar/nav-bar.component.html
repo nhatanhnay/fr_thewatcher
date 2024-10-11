@@ -1,0 +1,25 @@
+<head>    
+    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<header>
+    <div class="logo">
+        <h1>THE WATCHERS</h1>
+    </div>
+    <div class="icons">
+        <input class="icon-input input-search" type="text" placeholder="Search">
+        <i class="ti-search icon-header " ></i>
+        <a href="/cart" class="cart-container">
+            <i class="ti-bag icon-header cart-icons"></i>
+            <span class="cart-quantity" *ngIf="cartQuantity > 0">{{ cartQuantity }}</span>
+        </a>
+    </div>
+</header>
+<nav>
+    <ul>
+        <li><a href="/home">Discover</a></li>
+        <li><a href="/market">Market</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+        <li><a href="/blog">Blog</a></li>
+    </ul>
+</nav>

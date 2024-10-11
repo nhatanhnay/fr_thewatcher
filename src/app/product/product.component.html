@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<div class="product-card">
+    <a [href]="linkHref" target="_blank">
+        <div class="image">
+            <img [src]="urlImage" class="product">
+        </div>
+    </a>
+    <div class="product-info">
+        <div class="product-info-name-and-price">
+            <div class="name-and-price">
+                <p class="name-product">{{ name }}</p> 
+                <p class="price">Price: ${{ price.toFixed(2) }} USD</p> 
+            </div>
+            <i class="ti-bag icon-bag" (click)="addToCart()" style="cursor: pointer;"></i>
+        </div>
+        <div class="block-buy">
+            <div class="ratings">
+                <span>{{ '★'.repeat(rating) }}{{ '☆'.repeat(5 - rating) }}</span> 
+                <p>{{ numberRating }} Đánh giá</p> 
+            </div>
+            <a [href]="linkHref" target="_blank">
+                <button class="buy-now">Mua Ngay</button>
+            </a>
+        </div>
+    </div>
+</div>

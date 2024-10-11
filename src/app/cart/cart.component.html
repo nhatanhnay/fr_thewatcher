@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Watchers</title>
+    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<div class="container">
+    <div class="cart">
+        <ul>
+            <li *ngFor="let item of cartItems">
+                <app-cart-item
+                    [id]="item.id"
+                    [urlImage]="item.urlImage"
+                    [name]="item.name"
+                    [price]="item.price"
+                    [quantity]="item.quantity"
+                ></app-cart-item>
+            </li>
+        </ul>
+    </div>
+    <div class="total">
+        <h3>Total: ${{ totalPrice }}</h3>
+        <a *ngIf="cartQuantity > 0" href="/checkout">    
+            <button class="buy">Buy</button>
+        </a>
+        <span *ngIf="cartQuantity === 0" class="empty-cart-message">Your cart is empty.</span>
+    </div> 
+</div>
