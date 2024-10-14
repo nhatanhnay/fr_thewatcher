@@ -45,8 +45,4 @@ export class DataService {
     getWatchDetails(): Observable<WatchDetails[]> {
         return this.http.post<WatchDetails[]>(this.apiUrl, {});
     }
-
-    postOrder(order: OrderDetails): Observable<any> {
-        return this.http.post(this.apiUrl, order);
-    }
 }
