@@ -38,7 +38,7 @@ interface OrderDetails {
 })
 
 export class DataService {
-    private apiUrl = 'http://localhost:4699/watch-details';
+    private apiUrl = 'http://103.81.87.196:4699/watch-details';
 
     constructor(private http: HttpClient) { }
 
