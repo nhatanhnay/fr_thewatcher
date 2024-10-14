@@ -4,7 +4,7 @@ import { ProductComponent } from '../product/product.component';
 import { ShoppingCartService } from '../models/services';
 import { FootBarComponent } from '../foot-bar/foot-bar.component';
 import { DataService } from '../functions/data';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, firstValueFrom } from 'rxjs';
 import { WatchDetails } from '../models/watch-details.model';
 
 @Component({
@@ -34,13 +34,15 @@ export class MarketComponent implements OnInit {
     return this.cartService.getCartQuantity();
   }
 
-  loadWatchDetails(): void {
-    this.dataService.getWatchDetails().subscribe(data => {
+  async loadWatchDetails(): Promise<void> {
+    try {
+      const data = await firstValueFrom(this.dataService.getWatchDetails()); // Await the data
       this.watchDetails = data;
       this.updatePaginatedWatchDetails();
-    });
+    } catch (error) {
+      console.error('Error loading watch details:', error);
+    }
   }
-  
 
   changePage(page: number): void {
     if (page < 1 || page > this.totalPages) return; // Prevent going out of bounds
@@ -54,5 +56,4 @@ export class MarketComponent implements OnInit {
     const paginatedItems = this.watchDetails.slice(start, end);
     this.watchDetailsSubject.next(paginatedItems);
   }
-  
 }
