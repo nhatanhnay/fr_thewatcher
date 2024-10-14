@@ -28,6 +28,7 @@ export class MarketComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadWatchDetails();
+    console.log('MarketComponent initialized');
   }
 
   get cartQuantity(): number {
