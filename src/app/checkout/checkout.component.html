@@ -52,4 +52,12 @@
                 [urlImage]="item.urlImage"></app-item-check-out>
         </div>
     </div>
+    <div class="modal" *ngIf="orderCompleted">
+        <div class="modal-content">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h2>Đơn hàng đã hoàn tất!</h2>
+            <p>Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đang được xử lý. Chúng tôi sẽ liên hệ với bạn sớm</p>
+            <button class="btn" (click)="closeModal()">Đóng</button>
+        </div>
+    </div>
 </div>

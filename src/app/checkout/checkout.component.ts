@@ -2,7 +2,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ItemCheckOutComponent } from '../item-check-out/item-check-out.component';
-import { ShoppingCartService} from '../models/services';
+import { ShoppingCartService } from '../models/services';
 import { OrderService } from '../functions/order';
 import { FormsModule } from '@angular/forms';
 
@@ -19,6 +19,9 @@ export class CheckoutComponent implements OnInit {
   wards: any[] = [];
   selectedCity: string = '';
   selectedDistrict: string = '';
+  orderCompleted: boolean = false; // Để hiển thị pop-up hoàn tất đơn hàng
+
+  // Thông tin khách hàng
   customer = {
     fullName: '',
     email: '',
@@ -30,15 +33,20 @@ export class CheckoutComponent implements OnInit {
     paymentMethod: 'COD'
   };
 
+  // Thông tin đơn hàng
   order = {
     name: '',
     email: '',
     phone: '',
     address: '',
     order_info: this.cartItems,
-  }
+  };
 
-  constructor(private http: HttpClient, private cartService: ShoppingCartService, private orderService: OrderService) {}
+  constructor(
+    private http: HttpClient, 
+    private cartService: ShoppingCartService, 
+    private orderService: OrderService
+  ) {}
 
   ngOnInit(): void {
     this.loadCities();
@@ -75,14 +83,17 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  // Lấy danh sách các sản phẩm trong giỏ hàng
   get cartItems() {
     return this.cartService.getCartItems();
   }
 
+  // Tính tổng giá trị đơn hàng
   get totalPrice() {
     return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
+  // Hoàn tất đơn hàng
   completeOrder() {
     const selectedCity = this.cities.find(city => city.Id === this.customer.city);
     const selectedDistrict = this.districts.find(district => district.Id === this.customer.district);
@@ -101,15 +112,21 @@ export class CheckoutComponent implements OnInit {
       address: `${wardName}, ${districtName}, ${cityName}, ${this.customer.address}`, // Tạo địa chỉ đầy đủ
       order_info: this.cartItems,  // Thông tin đơn hàng (các sản phẩm trong giỏ)
     };
+    this.orderCompleted = true; // Hiển thị thông báo hoàn tất đơn hàng
 
+    // Gửi đơn hàng đến service xử lý
     this.orderService.sendOrder(this.order).subscribe(response => {
       console.log('Order submitted successfully', response);
     }, error => {
       console.error('Error submitting order', error);
     });
 
-    // Hiển thị đơn hàng trong console
+    // Hiển thị đơn hàng trong console để kiểm tra
     console.log('Đơn hàng:', this.order);
   }
 
+  // Đóng pop-up hoàn tất đơn hàng
+  closeModal() {
+    this.orderCompleted = false;
+  }
 }

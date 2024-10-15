@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
 </head>
-<div class="market">
+<div class="main">
     <app-product *ngFor="let item of paginatedWatchDetails$ | async" [urlImage]="item.urlImage" [name]="item.name"
         [price]="item.price" [rating]="item.rating" [numberRating]="item.numberRating" [id]="item.id"
         [linkHref]="item.linkHref"></app-product>
