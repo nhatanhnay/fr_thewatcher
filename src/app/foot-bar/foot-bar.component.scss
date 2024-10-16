@@ -14,31 +14,33 @@
     justify-content: space-between;
     /* Giảm khoảng cách nếu cần */
     text-align: right;
-    padding: 1rem 2rem;
+    padding: 0rem 1rem 1rem 1rem;
 }
 
-.footer-icons {
+.support-info {
     display: flex;
     /* Hiển thị icon trong dạng hàng ngang */
-    gap: 2rem;
+    flex-direction: row;
     /* Khoảng cách giữa các icon */
     text-align: left;
     /* Căn chỉnh văn bản sang bên trái */
-    padding: 1rem 2rem;
+    padding: 0rem 1rem 0rem 2rem;
+    width: 300px;
+    gap:0.5rem;
 }
 
-.footer-icons i {
+.support-info i {
     font-size: 2rem;
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for color and size */
     cursor: pointer;
 }
 
-.footer-icons i:hover {
+.support-info i:hover {
     color: #1e90ff; /* Change to blue on hover (DodgerBlue) */
     transform: scale(1.2); /* Slightly enlarge the icon on hover */
 }
 
-.footer-icons i:active {
+.support-info i:active {
     transform: scale(0.9); /* Shrink on click to give a pressing effect */
     color: #4682b4; /* Darker blue on click (SteelBlue) */
     transition: transform 0.1s ease; /* Quick response for click */
@@ -63,4 +65,32 @@
 a {
     text-decoration: none;
     color: #fff;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    gap:0.5rem;
+}
+
+.info h3{
+    display: flex;
+    justify-content: left;
+    margin: 0rem;
+    align-items: left;
+    text-align: left;
+}
+
+.info p{
+    display: flex;
+    justify-content: center;
+    margin: 0rem;
+}
+
+.support-info a{
+    display: flex;
+    margin: 0rem;
+    align-items: center;
+    justify-content: center;
 }
