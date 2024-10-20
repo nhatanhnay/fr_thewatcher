@@ -44,8 +44,6 @@ export class ProductDetailsComponent implements OnInit {
       (data: WatchDetails[]) => {
         this.watchDetails = data[0];
         this.watchDetails.rating = Math.round(this.watchDetails.rating);
-        console.log(this.watchDetails.rating);
-        // Thay thế ký tự xuống dòng bằng <br>
         const formattedDescription = this.watchDetails.description.replace(/\n/g, '<br>');
         this.safeDescription = this.sanitizer.bypassSecurityTrustHtml(formattedDescription);
       },

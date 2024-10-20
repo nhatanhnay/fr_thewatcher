@@ -4,7 +4,8 @@
     </div>
     <div class="product-details">
       <h1>{{ watchDetails.name }}</h1>
-      <p class="price">Giá: {{ watchDetails.price }} USD</p>
+      <p class="price">Giá: {{ formatPrice(watchDetails.price) }} VNĐ
+      </p>
       <p class="rating">
         Đánh giá: 
         <span *ngFor="let star of [].constructor(watchDetails.rating || 0); let i = index" class="star">★</span>
