@@ -1,23 +1,31 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShoppingCartService } from '../models/services';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
 })
 export class ProductComponent {
-  @Input() urlImage: string = '';
+  @Input() image: string = '';
   @Input() name: string = '';
   @Input() price: number = 0;
   @Input() rating: number = 0;
   @Input() numberRating: number = 0;
-  @Input() linkHref: string = '';
+  @Input() href: string = '';
   @Input() id: number = 0;
 
+  public linkDetail: string = '';
+product: any;
+
+  ngOnInit(): void {
+    this.linkDetail = `/product-details/${this.id}`;
+  }
+  
   isClicked = false;
 
   constructor(private cartService: ShoppingCartService) {}
@@ -27,7 +35,7 @@ export class ProductComponent {
       id: this.id,
       name: this.name,
       price: this.price,
-      urlImage: this.urlImage,
+      urlImage: this.image,
       quantity: 1
     });
     console.log(`Thêm sản phẩm ${this.name} vào giỏ hàng với giá $${this.price.toFixed(2)}`);

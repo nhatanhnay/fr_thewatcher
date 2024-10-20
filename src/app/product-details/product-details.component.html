@@ -1,0 +1,28 @@
+<div *ngIf="watchDetails; else loadingTemplate" class="product-info">
+    <div class="product-image-container">
+      <img [src]="watchDetails.image" alt="{{ watchDetails.name }}" class="product-image" />
+    </div>
+    <div class="product-details">
+      <h1>{{ watchDetails.name }}</h1>
+      <p class="price">Giá: {{ watchDetails.price }} USD</p>
+      <p class="rating">
+        Đánh giá: 
+        <span *ngFor="let star of [].constructor(watchDetails.rating || 0); let i = index" class="star">★</span>
+        ({{ watchDetails.numberRating }} đánh giá)
+      </p>
+      
+      
+      <div class="description" [innerHTML]="safeDescription"></div>
+  
+      <button (click)="addToCart()" class="buy-button">Mua Ngay</button>
+    </div>
+  </div>
+  
+  <ng-template #loadingTemplate>
+    <p>Đang tải thông tin sản phẩm...</p>
+  </ng-template>
+  
+  <div *ngIf="errorMessage">
+    <p class="error-message">{{ errorMessage }}</p>
+  </div>
+  

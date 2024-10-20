@@ -14,47 +14,28 @@ interface WatchDetails {
     description: string;
     category: string;  // Chú ý thay đổi từ NumberRating sang numberRating
 }
-
-interface CartItem {
-    id: number;
-    name: string;
-    price: number;
-    urlImage: string;
-    quantity: number;
-}
-
-interface CustomerDetails {
-    name: string;
-    email: string;
-    address: string;
-    phone: string;
-}
-
-interface OrderDetails {
-    customer: CustomerDetails;
-    items: CartItem[];
-}
-
 @Injectable({
     providedIn: 'root',
 })
+
 export class DataService {
 
     constructor(private http: HttpClient) { }
 
-    // Phương thức lấy chi tiết đồng hồ
-    getWatchDetails(): Observable<WatchDetails[]> {
-        // Định nghĩa headers với Content-Type
+    getWatchDetail(id: number): Observable<WatchDetails[]> {
         const headers = new HttpHeaders({
-            'Content-Type': 'application/json', // Đặt Content-Type là application/json
+            'Content-Type': 'application/json',
         });
-
-        return this.http.post<WatchDetails[]>('http://103.81.87.196:4699/watch-details', {}, { headers }).pipe(
+    
+        const body = {
+            id: id
+        };
+    
+        return this.http.post<WatchDetails[]>('http://103.81.87.196:4699/get-watch-by-id', body, { headers }).pipe(
             catchError((error) => {
-                console.error('Error fetching watch details', error);
+                console.error('Error fetching watch detail', error);
                 return throwError(error);
             })
         );
     }
 }
-

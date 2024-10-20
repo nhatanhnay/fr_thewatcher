@@ -1,9 +1,11 @@
 export interface WatchDetails {
-    id: number;           // ID của
-    linkHref: string;     // Đường dẫn đến sản phẩm
-    name: string;         // Tên đồng hồ
-    price: number;        // Giá đồng hồ
-    rating: number;       // Đánh giá của đồng hồ
-    urlImage: string;     // URL hình ảnh của đồng hồ
-    numberRating: number; // Số lượng đánh giá
+    id: number;
+    image: string;      // Chú ý thay đổi từ LinkHref sang linkHref
+    name: string;          // Chú ý thay đổi từ Name sang name
+    price: number;
+    rating: number;
+    href: string;      // Chú ý thay đổi từ UrlImage sang urlImage
+    numberRating: number;
+    description: string;
+    category: string;  // Chú ý thay đổi từ NumberRating sang numberRating
 }

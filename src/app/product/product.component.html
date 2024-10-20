@@ -1,10 +1,7 @@
-<head>
-    <link rel="stylesheet" href="../../assets/themify-icons-font/themify-icons/themify-icons.css">
-</head>
 <div class="product-card">
-    <a [href]="linkHref" target="_blank">
+    <a [href]="'/product/' + id">
         <div class="image">
-            <img [src]="urlImage" class="product">
+            <img [src]="image" class="product">
         </div>
     </a>
     <div class="product-info">
@@ -20,7 +17,7 @@
                 <span>{{ '★'.repeat(rating) }}{{ '☆'.repeat(5 - rating) }}</span> 
                 <p>{{ numberRating }} Đánh giá</p> 
             </div>
-            <a [href]="linkHref" target="_blank">
+            <a [href]="id" target="_blank">
                 <button class="buy-now">Mua Ngay</button>
             </a>
         </div>
