@@ -39,6 +39,10 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
+  formatPrice(value: number): string {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Định dạng với dấu phân cách
+  }
+
   getWatchDetail(id: number): void {
     this.dataService.getWatchDetail(id).subscribe(
       (data: WatchDetails[]) => {
