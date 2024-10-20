@@ -26,6 +26,10 @@ export class CartItemComponent {
     return this.price * this.quantity;
   }
 
+  formatPrice(value: number): string {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Định dạng với dấu phân cách
+  }
+
   removeItem(id: number) {
     this.cartService.removeFromCart(id);
   }

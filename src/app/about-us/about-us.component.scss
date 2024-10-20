@@ -1,0 +1,101 @@
+.block-1 {
+    position: relative;
+    text-align: left; /* Căn trái nội dung */
+}
+
+.image {
+    position: relative; /* Đặt vị trí cho hình ảnh */
+}
+
+.image img {
+    width: 100%; /* Điều chỉnh chiều rộng của hình ảnh */
+    height: auto; /* Đảm bảo tỷ lệ hình ảnh */
+}
+
+.content {
+    position: absolute; /* Đặt nội dung vào vị trí tuyệt đối */
+    top: 10%; /* Giữa theo chiều dọc */
+    left: 10%; /* Di chuyển nội dung sang bên trái, điều chỉnh giá trị theo ý muốn */
+    transform: translateY(-10%, -10%); /* Giữa theo chiều dọc */
+    color: white; /* Màu chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Đổ bóng cho chữ để dễ đọc hơn */
+    padding: 80px; /* Thêm khoảng đệm */
+    width: 50%; /* Điều chỉnh chiều rộng */
+    display: flex; /* Hiển thị theo kiểu flexbox */
+    flex-direction: column; /* Hiển thị theo chiều dọc */
+}
+
+.content h1{
+    font-size: 4em; /* Điều chỉnh kích thước chữ */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.content p {
+    font-size: 1.5em; /* Điều chỉnh kích thước chữ */
+    margin-bottom: 20px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.block-white {
+    display: flex; /* Hiển thị theo kiểu flexbox */
+    width: 100%; /* Chiều rộng 100% */
+    height: 100%; /* Chiều cao 100% của viewport */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.block-white img{
+    margin: auto; /* Canh giữa theo chiều ngang */
+    width: 100%; /* Điều chỉnh chiều rộng */
+}
+
+.block-white p {
+    font-size: 1.5em; /* Điều chỉnh kích thước chữ */
+    margin: 20px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.content img {
+    width: 100%; /* Điều chỉnh chiều rộng */
+    height: auto; /* Đảm bảo tỷ lệ hình ảnh */
+}
+
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.content-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content-2 {
+    width: 40%; /* Điều chỉnh độ rộng của phần content */
+    top:10%;
+    left: 10%;
+    color: white; 
+    transform: translateY(-10%, -10%);
+    padding: 80px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem;
+}
+
+.image-3 {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
