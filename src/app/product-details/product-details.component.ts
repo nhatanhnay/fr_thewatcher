@@ -5,6 +5,7 @@ import { WatchDetails } from '../models/watch-details.model';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ShoppingCartService } from '../models/services';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
@@ -23,7 +24,8 @@ export class ProductDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private dataService: DataService,
     private sanitizer: DomSanitizer,
-    private cartService: ShoppingCartService
+    private cartService: ShoppingCartService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -59,6 +61,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   isClicked = false;
+
+  goBack(): void {
+    this.location.back();
+  }
 
   addToCart() {
     if (this.id !== undefined) {

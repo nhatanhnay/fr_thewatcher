@@ -1,22 +1,31 @@
 <div *ngIf="watchDetails; else loadingTemplate" class="product-info">
-    <div class="product-image-container">
-      <img [src]="watchDetails.image" alt="{{ watchDetails.name }}" class="product-image" />
+  <div class="description-header">
+    <div class="header">
+      <i class="ti-angle-double-left double-left" (click)="goBack()"></i>
+      <h2>Thông tin sản phẩm</h2>
     </div>
-    <div class="product-details">
-      <h1>{{ watchDetails.name }}</h1>
-      <p class="price">Giá: {{ formatPrice(watchDetails.price) }} VNĐ
-      </p>
-      <p class="rating">
-        Đánh giá: 
-        <span *ngFor="let star of [].constructor(watchDetails.rating || 0); let i = index" class="star">★</span>
-        ({{ watchDetails.numberRating }} đánh giá)
-      </p>
-      
-      
-      <div class="description" [innerHTML]="safeDescription"></div>
-  
-      <button (click)="addToCart()" class="buy-button">Mua Ngay</button>
+    <div class="description" [innerHTML]="safeDescription"></div>
+  </div>
+  <div class="product-image-container">
+    <img [src]="watchDetails.image" alt="{{ watchDetails.name }}" class="product-image" />
+  </div>
+  <div class="product-details">
+    <h1>{{ watchDetails.name }}</h1>
+    <p class="price">Giá: {{ formatPrice(watchDetails.price) }} VNĐ
+    </p>
+    <p class="rating">
+      Đánh giá: 
+      <span *ngFor="let star of [].constructor(watchDetails.rating || 0); let i = index" class="star">★</span>
+      ({{ watchDetails.numberRating }} đánh giá)
+    </p>
+    
+    <div class="buy-block">
+      <i class="ti-bag icon-bag" (click)="addToCart()" style="cursor: pointer;"></i>
+      <a href="/cart" class="buy">
+        <button (click)="addToCart()" class="buy-button">Mua Ngay</button>
+      </a>
     </div>
+  </div>
   </div>
   
   <ng-template #loadingTemplate>

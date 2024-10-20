@@ -1,65 +1,123 @@
 .product-info {
-    display: flex; /* Sử dụng flexbox để căn chỉnh nội dung */
-    align-items: flex-start; /* Căn chỉnh các phần tử ở đầu */
-    padding: 20px; /* Thêm khoảng cách xung quanh */
-  }
-  
-  .product-image-container {
-    flex: 1; /* Cho phép hình ảnh chiếm không gian tương ứng */
-    max-width: 400px; /* Giới hạn chiều rộng tối đa */
-    margin-right: 20px; /* Khoảng cách giữa ảnh và phần chi tiết sản phẩm */
-  }
-  
-  .product-image {
-    width: 100%; /* Ảnh chiếm 100% chiều rộng của container */
-    height: auto; /* Đảm bảo chiều cao tự động */
-    border-radius: 8px; /* Bo góc cho ảnh */
-  }
-  
-  .product-details {
-    flex: 2; /* Cho phép chi tiết sản phẩm chiếm không gian nhiều hơn */
-  }
-  
-  .price {
-    font-size: 1.5em;
-    color: #333;
-    margin: 10px 0;
-  }
-  
-  .rating {
-    color: #ff9900;
-  }
-  
-  .star {
-    font-size: 1.5em;
-  }
-  
-  .description {
-    margin: 20px 0;
-    font-size: 1em;
-    line-height: 1.5;
-    text-align: justify;
-  }
-  
-  .buy-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .buy-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: 3fr 4fr 3fr; /* Chia thành 3 cột với tỷ lệ 1:1:2 */
+  gap: 20px; /* Khoảng cách giữa các cột */
+  padding: 20px; /* Thêm khoảng cách bên trong */
+}
+
+.product-image-container {
+  grid-column: 2; /* Hình ảnh nằm ở cột thứ 2 */
+  text-align: center; /* Căn giữa hình ảnh */
+}
+
+.product-details {
+  display: flex; /* Sử dụng grid layout */
+  grid-column: 3; /* Chi tiết sản phẩm nằm ở cột thứ 3 */
+  padding-left: 20px; /* Khoảng cách bên trái */
+  flex-direction: column; /* Hiển thị dạng cột */
+}
+
+.description {
+  grid-column: 1; /* Mô tả nằm ở cột thứ 1 */
+  max-height: 650px; /* Chiều cao tối đa của thẻ mô tả */
+  overflow-y: auto; /* Kích hoạt cuộn dọc khi nội dung vượt quá chiều cao tối đa */
+  padding: 10px; /* Thêm padding cho thẻ mô tả */
+  border: 1px solid #ccc; /* Viền cho thẻ mô tả */
+  border-radius: 5px; /* Bo góc cho thẻ mô tả */
+  background-color: #f9f9f9; /* Màu nền cho thẻ mô tả */
+}
+
+.description::-webkit-scrollbar {
+  width: 8px; /* Độ rộng của thanh cuộn */
+}
+
+.description::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền cho phần thanh cuộn */
+  border-radius: 10px; /* Bo góc cho nền thanh cuộn */
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: #888; /* Màu cho thanh cuộn */
+  border-radius: 10px; /* Bo góc cho thanh cuộn */
+}
+
+.description::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Màu khi hover lên thanh cuộn */
+}
+
+
+/* Các kiểu khác cho các phần tử bên trong */
+.product-image {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước */
+  height: auto; /* Đảm bảo tỷ lệ khung hình */
+}
+
+.price {
+  font-size: 1.5em; /* Kích thước chữ cho giá */
+  color: #333; /* Màu chữ */
+}
+
+.rating {
+  margin: 10px 0; /* Khoảng cách trên và dưới cho đánh giá */
+}
+
+.star {
+  color: gold; /* Màu sắc cho sao */
+}
+
+.buy-button {
+  background-color: #28a745; /* Màu nền cho nút mua */
+  color: white; /* Màu chữ cho nút mua */
+  padding: 10px 20px; /* Padding cho nút mua */
+  border: none; /* Không có viền */
+  border-radius: 5px; /* Bo góc cho nút mua */
+  cursor: pointer; /* Con trỏ chuột khi hover */
+  align-items: center;
+}
+
+.icon-bag {
+  font-size: 2rem; /* Kích thước chữ cho icon */
+  align-items: center;
+  justify-content: center;
+  margin-left: 11rem; /* Khoảng cách với chữ */
+}
+
+.buy-block {
+  display: grid; /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa nút mua */
+  flex-direction: row;
+  grid-template-columns: 3fr 4fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.header {
+  display: flex; /* Sử dụng Flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: start; /* Căn giữa theo chiều ngang */
+  margin-bottom: 20px; /* Khoảng cách phía dưới cho header */
+}
+
+.double-left {
+  font-size: 24px; /* Kích thước biểu tượng */
+  margin-right: 10px; /* Khoảng cách bên phải cho biểu tượng */
+  cursor: pointer; /* Con trỏ chuột khi hover */
+}
+
+h2 {
+  margin: 0; /* Xóa margin mặc định của h2 */
+  font-size: 24px; /* Kích thước chữ của h2 */
+}
+
+
+.buy {
+  text-decoration: none;
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Căn giữa nút mua */
+  flex-direction: row;
+  gap: 10px;
+}
+
+.buy-button:hover {
+  background-color: #218838; /* Màu nền khi hover */
+}

@@ -19,9 +19,9 @@
         </ul>
     </div>
     <div class="total">
-        <h3>Tổng: {{ totalPrice }} VNĐ</h3>
+        <h3>Tổng: {{ formatPrice(totalPrice) }} VNĐ</h3>
         <a *ngIf="cartQuantity > 0" href="/checkout">    
-            <button class="buy">Buy</button>
+            <button class="buy">Thanh toán</button>
         </a>
         <span *ngIf="cartQuantity === 0" class="empty-cart-message">Giỏ hàng của bạn trống.</span>
     </div> 

@@ -29,4 +29,7 @@ export class CartComponent {
     this.cartService.removeFromCart(id);
   }
 
+  formatPrice(value: number): string {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Định dạng với dấu phân cách
+  }
 }
