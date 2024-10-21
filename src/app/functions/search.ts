@@ -31,7 +31,7 @@ export class DataService {
             name: name
         };
     
-        return this.http.post<WatchDetails[]>('http://103.81.87.196:4699/get-watch-by-name', body, { headers }).pipe(
+        return this.http.post<WatchDetails[]>('https://103.81.87.196:4699/get-watch-by-name', body, { headers }).pipe(
             catchError((error) => {
                 console.error('Error fetching watch detail', error);
                 return throwError(error);

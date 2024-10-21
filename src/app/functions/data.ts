@@ -49,7 +49,7 @@ export class DataService {
             'Content-Type': 'application/json', // Đặt Content-Type là application/json
         });
 
-        return this.http.post<WatchDetails[]>('http://103.81.87.196:4699/watch-details', {}, { headers }).pipe(
+        return this.http.post<WatchDetails[]>('https://103.81.87.196:4699/watch-details', {}, { headers }).pipe(
             catchError((error) => {
                 console.error('Error fetching watch details', error);
                 return throwError(error);
