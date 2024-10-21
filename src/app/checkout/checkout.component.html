@@ -52,7 +52,7 @@
                 [urlImage]="item.urlImage"></app-item-check-out>
         </div>
         <div class="total">
-            <h2>Tổng cộng: {{ sumTotal }} đ</h2>
+            <h2>Tổng cộng: {{ formatPrice(sumTotal) }} đ</h2>
     </div>
     <div class="modal" *ngIf="orderCompleted">
         <div class="modal-content">

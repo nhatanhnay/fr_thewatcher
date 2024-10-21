@@ -85,6 +85,10 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  formatPrice(value: number): string {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Định dạng với dấu phân cách
+  }
+
   // Lấy danh sách các sản phẩm trong giỏ hàng
   get cartItems() {
     return this.cartService.getCartItems();
