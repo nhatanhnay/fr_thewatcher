@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class OrderService {
-    private apiUrl = 'https://103.81.87.196:4699/insert-order ';  // Replace with your backend URL
+    private apiUrl = 'http://103.81.87.196:4699/insert-order ';  // Replace with your backend URL
   
     constructor(private http: HttpClient) {}
   
