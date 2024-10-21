@@ -48,7 +48,7 @@
 
     <div class="right-column">
         <div class="order-summary">
-            <app-item-check-out *ngFor="let item of cartItems" [name]="item.name" [price]="item.price"
+            <app-item-check-out *ngFor="let item of cartItems" [name]="item.name" [quantity]="item.quantity" [price]="item.price"
                 [urlImage]="item.urlImage"></app-item-check-out>
         </div>
         <div class="total">
