@@ -17,8 +17,8 @@
                 <span>{{ '★'.repeat(rating) }}{{ '☆'.repeat(5 - rating) }}</span> 
                 <p>{{ numberRating }} Đánh giá</p> 
             </div>
-            <a [href]="id" target="_blank">
-                <button class="buy-now">Mua Ngay</button>
+            <a [href]="'/cart'" target="_blank">
+                <button class="buy-now" (click)="addToCart()">Mua Ngay</button>
             </a>
         </div>
     </div>
