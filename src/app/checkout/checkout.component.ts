@@ -95,6 +95,9 @@ export class CheckoutComponent implements OnInit {
     return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
+  get sumTotal() {
+    return this.cartService.sumTotal();
+  }
   // Hoàn tất đơn hàng
   completeOrder() {
     const selectedCity = this.cities.find(city => city.Id === this.customer.city);

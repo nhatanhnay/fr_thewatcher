@@ -45,6 +45,10 @@ export class ShoppingCartService {
     this.saveCart();
   }
 
+  sumTotal() {
+    return this.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  }
+
   getCartQuantity(): number {
     return this.cart.reduce((total, item) => total + item.quantity, 0);
   }
