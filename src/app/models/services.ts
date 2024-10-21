@@ -40,6 +40,11 @@ export class ShoppingCartService {
     return this.cart;
   }
 
+  removeAllCart() {
+    this.cart = [];
+    this.saveCart();
+  }
+
   getCartQuantity(): number {
     return this.cart.reduce((total, item) => total + item.quantity, 0);
   }

@@ -5,6 +5,7 @@ import { ItemCheckOutComponent } from '../item-check-out/item-check-out.componen
 import { ShoppingCartService } from '../models/services';
 import { OrderService } from '../functions/order';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -45,7 +46,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private http: HttpClient, 
     private cartService: ShoppingCartService, 
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -128,5 +130,8 @@ export class CheckoutComponent implements OnInit {
   // Đóng pop-up hoàn tất đơn hàng
   closeModal() {
     this.orderCompleted = false;
+    this.cartService.removeAllCart(); // Xoá toàn bộ giỏ hàng
+    //quay lại trang chủ
+    this.router.navigate(['/']);
   }
 }
