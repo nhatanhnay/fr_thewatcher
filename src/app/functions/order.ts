@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class OrderService {
-    private apiUrl = 'https://thewatchers.shop/insert-order ';  // Replace with your backend URL
+    private apiUrl = 'https://thewatchers.shop/api/insert-order ';  // Replace with your backend URL
   
     constructor(private http: HttpClient) {}
   
