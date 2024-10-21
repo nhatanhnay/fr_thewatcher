@@ -1,0 +1,6 @@
+<h2>Tìm kiếm: {{ searchText }}</h2>
+<div class="main">
+    <app-product *ngFor="let item of paginatedWatchDetails$ | async" [image]="item.image" [name]="item.name"
+        [price]="item.price" [rating]="item.rating" [numberRating]="item.numberRating" [id]="item.id"
+        [href]="item.href"></app-product>
+</div>

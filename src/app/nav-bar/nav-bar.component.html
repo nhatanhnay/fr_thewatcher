@@ -6,8 +6,8 @@
         <h1>THE WATCHERS</h1>
     </div>
     <div class="icons">
-        <input class="icon-input input-search" type="text" placeholder="Search">
-        <i class="ti-search icon-header " ></i>
+        <input class="icon-input input-search" type="text" placeholder="Search" [(ngModel)]="searchText">
+        <a [href]="'/search/'+searchText"><i class="ti-search icon-header"></i></a>
         <a href="/cart" class="cart-container">
             <i class="ti-bag icon-header cart-icons"></i>
             <span class="cart-quantity" *ngIf="cartQuantity > 0">{{ cartQuantity }}</span>
